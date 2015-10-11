@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func setUpTimer() {
         if let button = statusItem.button {
             button.action = Selector("copyToClipboard")
-            button.title = "\(timeZone) \(generateTimeStr())"
+            button.title = generateMenuBarTimeStr()
         }
 
         NSTimer.scheduledTimerWithTimeInterval(
@@ -42,19 +42,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             repeats: true
         )
     }
-    
+
     func tick() {
         if let button = statusItem.button {
-            button.title = "\(timeZone) \(generateTimeStr())"
+            button.title = generateMenuBarTimeStr()
         }
     }
     
+    func generateMenuBarTimeStr() -> String {
+        return "\(timeZone)  \(generateTimeStr())"
+    }
+
     func generateTimeStr() -> String {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         formatter.timeZone = NSTimeZone(abbreviation: timeZone);
         return formatter.stringFromDate(NSDate())
     }
-    
+
     func copyToClipboard() {
         pasteBoard.clearContents()
         pasteBoard.writeObjects([generateTimeStr()])

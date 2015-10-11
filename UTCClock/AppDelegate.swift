@@ -64,6 +64,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func copyToClipboard(sender: NSStatusBarButton) {
         pasteBoard.clearContents()
-        pasteBoard.writeObjects([sender.title])
+        pasteBoard.setString(sender.title, forType: NSPasteboardTypeString)
     }
 }

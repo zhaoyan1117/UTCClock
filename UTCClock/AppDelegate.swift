@@ -22,17 +22,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let pasteBoard = NSPasteboard.generalPasteboard()
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     let formatter = NSDateFormatter()
+    let formatterStr = "yyyy-MM-dd HH:mm:ss"
     let timeZone = "UTC"
     
     override func awakeFromNib() {
+        setUpStatusBar()
         setUpTimer()
     }
     
-    func setUpTimer() {
+    func setUpStatusBar() {
         if let button = statusItem.button {
-            button.action = Selector("copyToClipboard")
-            button.title = generateMenuBarTimeStr()
+            button.action = Selector("copyToClipboard:")
+            button.title = generateTimeStr()
+            button.font = NSFont(name: "Eurostile", size: 15)
+            button.alignment = NSTextAlignment.Center
         }
+    }
+
+    func setUpTimer() {
+        formatter.dateFormat = formatterStr
+        formatter.timeZone = NSTimeZone(abbreviation: timeZone);
 
         NSTimer.scheduledTimerWithTimeInterval(
             1.0,
@@ -43,24 +52,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         )
     }
 
-    func tick() {
-        if let button = statusItem.button {
-            button.title = generateMenuBarTimeStr()
-        }
-    }
-    
-    func generateMenuBarTimeStr() -> String {
-        return "\(timeZone)  \(generateTimeStr())"
-    }
-
     func generateTimeStr() -> String {
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        formatter.timeZone = NSTimeZone(abbreviation: timeZone);
         return formatter.stringFromDate(NSDate())
     }
 
-    func copyToClipboard() {
+    func tick() {
+        if let button = statusItem.button {
+            button.title = generateTimeStr()
+        }
+    }
+
+    func copyToClipboard(sender: NSStatusBarButton) {
         pasteBoard.clearContents()
-        pasteBoard.writeObjects([generateTimeStr()])
+        pasteBoard.writeObjects([sender.title])
     }
 }

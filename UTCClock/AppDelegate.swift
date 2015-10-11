@@ -5,7 +5,6 @@
 //  Created by YAN ZHAO on 10/10/15.
 //  Copyright © 2015 Yan Zhao. All rights reserved.
 //
-
 import Cocoa
 
 @NSApplicationMain
@@ -14,7 +13,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
-        setUpTimer()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -26,23 +24,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let formatter = NSDateFormatter()
     let timeZone = "UTC"
     
+    override func awakeFromNib() {
+        setUpTimer()
+    }
+    
     func setUpTimer() {
         if let button = statusItem.button {
-            button.action = Selector("copyToClipboard:")
-            button.title = generateTimeStr()
+            button.action = Selector("copyToClipboard")
+            button.title = "\(timeZone) \(generateTimeStr())"
         }
-        
+
         NSTimer.scheduledTimerWithTimeInterval(
             1.0,
             target: self,
-            selector: Selector("tick:"),
+            selector: Selector("tick"),
             userInfo: nil,
             repeats: true
         )
     }
     
-    func tick(timer: NSTimer) {
-        statusItem.button?.title = generateTimeStr()
+    func tick() {
+        if let button = statusItem.button {
+            button.title = "\(timeZone) \(generateTimeStr())"
+        }
     }
     
     func generateTimeStr() -> String {
@@ -51,8 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return formatter.stringFromDate(NSDate())
     }
     
-    func copyToClipboard(sender: NSStatusBarButton) {
+    func copyToClipboard() {
         pasteBoard.clearContents()
-        pasteBoard.writeObjects([sender.title])
+        pasteBoard.writeObjects([generateTimeStr()])
     }
 }

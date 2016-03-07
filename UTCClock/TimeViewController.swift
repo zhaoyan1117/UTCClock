@@ -34,4 +34,8 @@ class TimeViewController: NSViewController {
             pstOutput.stringValue = DateTime.formatterStr
         }
     }
+
+    @IBAction func quitApp(sender: NSButton) {
+        NSApplication.sharedApplication().terminate(self)
+    }
 }

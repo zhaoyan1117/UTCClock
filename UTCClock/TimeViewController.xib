@@ -46,11 +46,14 @@
                 </box>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VBq-TS-L3p">
                     <rect key="frame" x="20" y="140" width="125" height="22"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" usesSingleLineMode="YES" bezelStyle="round" id="Awd-1s-9K6">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="right" usesSingleLineMode="YES" bezelStyle="round" id="Awd-1s-9K6">
                         <font key="font" size="15" name="EurostileRegular"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="enterEpochInput:" target="-2" id="AbZ-6e-9gf"/>
+                    </connections>
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A6Z-kq-Zdd">
                     <rect key="frame" x="20" y="81" width="170" height="22"/>

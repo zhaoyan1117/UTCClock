@@ -26,6 +26,18 @@ class TimeViewController: NSViewController {
     }
     
     @IBAction func convert(sender: NSBundle) {
+        convertInternal()
+    }
+
+    @IBAction func enterEpochInput(sender: NSTextField) {
+        convertInternal()
+    }
+
+    @IBAction func quitApp(sender: NSButton) {
+        NSApplication.sharedApplication().terminate(self)
+    }
+
+    private func convertInternal() {
         if let epoch = Double(epochInput.stringValue) {
             utcOutput.stringValue = utcDateTime.getCurrentTimeStr(epoch)
             pstOutput.stringValue = pstDateTime.getCurrentTimeStr(epoch)
@@ -33,9 +45,5 @@ class TimeViewController: NSViewController {
             utcOutput.stringValue = DateTime.formatterStr
             pstOutput.stringValue = DateTime.formatterStr
         }
-    }
-
-    @IBAction func quitApp(sender: NSButton) {
-        NSApplication.sharedApplication().terminate(self)
     }
 }

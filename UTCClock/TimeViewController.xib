@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TimeViewController" customModule="UTCClock" customModuleProvider="target">
+            <connections>
+                <outlet property="epochInput" destination="VBq-TS-L3p" id="nAi-d3-RvF"/>
+                <outlet property="pstOutput" destination="A6Z-kq-Zdd" id="OrI-gM-8KY"/>
+                <outlet property="utcOutput" destination="hZC-S1-WPh" id="Uyh-mG-o5x"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="277"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oop-SC-sLi">
+                    <rect key="frame" x="14" y="229" width="222" height="32"/>
+                    <buttonCell key="cell" type="push" title="Copy Current UTC Time" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="qNH-Wz-huB">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="15" name="EurostileRegular"/>
+                        <connections>
+                            <action selector="copyCurrentUTCTime:" target="-2" id="qe1-1H-K2v"/>
+                        </connections>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDZ-8N-LHg">
+                    <rect key="frame" x="14" y="196" width="222" height="32"/>
+                    <buttonCell key="cell" type="push" title="Copy Current UTC Epoch" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="6hz-Vl-kIh">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="15" name="EurostileRegular"/>
+                        <connections>
+                            <action selector="copyCurrentUTCEpoch:" target="-2" id="Wmv-3s-DJm"/>
+                        </connections>
+                    </buttonCell>
+                </button>
+                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="bqu-96-Y1R">
+                    <rect key="frame" x="0.0" y="180" width="250" height="5"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VBq-TS-L3p">
+                    <rect key="frame" x="20" y="140" width="125" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" usesSingleLineMode="YES" bezelStyle="round" id="Awd-1s-9K6">
+                        <font key="font" size="15" name="EurostileRegular"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A6Z-kq-Zdd">
+                    <rect key="frame" x="20" y="81" width="170" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="yyyy-MM-dd HH:mm:ss" usesSingleLineMode="YES" bezelStyle="round" id="iBX-Q0-rno">
+                        <font key="font" size="15" name="EurostileRegular"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZC-S1-WPh">
+                    <rect key="frame" x="20" y="111" width="170" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="yyyy-MM-dd HH:mm:ss" usesSingleLineMode="YES" bezelStyle="round" id="bZ6-Q2-Dmu">
+                        <font key="font" size="15" name="EurostileRegular"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z27-lB-yuK">
+                    <rect key="frame" x="147" y="134" width="89" height="32"/>
+                    <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sim-i6-jl2">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="15" name="EurostileRegular"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="convert:" target="-2" id="G7T-Fu-OZP"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5Q-Br-PWO">
+                    <rect key="frame" x="196" y="114" width="36" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="UTC" usesSingleLineMode="YES" id="RJW-be-rcw">
+                        <font key="font" size="15" name="EurostileRegular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQG-Dg-gVg">
+                    <rect key="frame" x="196" y="84" width="36" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PST" usesSingleLineMode="YES" id="VkL-tZ-Srg">
+                        <font key="font" size="15" name="EurostileRegular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Htb-fC-xhm">
+                    <rect key="frame" x="0.0" y="59" width="250" height="5"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOS-dG-uwX">
+                    <rect key="frame" x="14" y="13" width="222" height="32"/>
+                    <buttonCell key="cell" type="push" title="Quit UTC Clock" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SuZ-lU-mgN">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="15" name="EurostileRegular"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="710" y="404.5"/>
+        </customView>
+        <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="6KR-aE-1tM">
+            <rect key="frame" x="0.0" y="0.0" width="248" height="5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <font key="titleFont" metaFont="system"/>
+            <point key="canvasLocation" x="405" y="410.5"/>
+        </box>
+        <button verticalHuggingPriority="750" id="29g-TN-Use">
+            <rect key="frame" x="0.0" y="0.0" width="71" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="nE5-Ie-sVI">
+                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                <font key="font" size="15" name="EurostileRegular"/>
+            </buttonCell>
+            <point key="canvasLocation" x="609.5" y="486.5"/>
+        </button>
+    </objects>
+</document>

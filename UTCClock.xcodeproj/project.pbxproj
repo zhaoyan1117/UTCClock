@@ -10,6 +10,12 @@
 		534E36C31BC9DCED00B70ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534E36C21BC9DCED00B70ACC /* AppDelegate.swift */; };
 		534E36C51BC9DCED00B70ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534E36C41BC9DCED00B70ACC /* Assets.xcassets */; };
 		534E36C81BC9DCED00B70ACC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 534E36C61BC9DCED00B70ACC /* MainMenu.xib */; };
+		53B686441C8D011F00CCCF30 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B686421C8D011F00CCCF30 /* TimeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		53B686451C8D011F00CCCF30 /* TimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53B686431C8D011F00CCCF30 /* TimeViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		53D61B481C8D034600DEDE12 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D61B471C8D034600DEDE12 /* EventMonitor.swift */; settings = {ASSET_TAGS = (); }; };
+		53D61B4B1C8D0C0800DEDE12 /* PasteBoardUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D61B4A1C8D0C0800DEDE12 /* PasteBoardUtil.swift */; settings = {ASSET_TAGS = (); }; };
+		53D61B4D1C8D1E3E00DEDE12 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D61B4C1C8D1E3E00DEDE12 /* Clock.swift */; settings = {ASSET_TAGS = (); }; };
+		53D61B511C8D42D900DEDE12 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D61B501C8D42D900DEDE12 /* DateTime.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +24,12 @@
 		534E36C41BC9DCED00B70ACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		534E36C71BC9DCED00B70ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		534E36C91BC9DCED00B70ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53B686421C8D011F00CCCF30 /* TimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		53B686431C8D011F00CCCF30 /* TimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeViewController.xib; sourceTree = "<group>"; };
+		53D61B471C8D034600DEDE12 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		53D61B4A1C8D0C0800DEDE12 /* PasteBoardUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteBoardUtil.swift; sourceTree = "<group>"; };
+		53D61B4C1C8D1E3E00DEDE12 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		53D61B501C8D42D900DEDE12 /* DateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +62,13 @@
 		534E36C11BC9DCED00B70ACC /* UTCClock */ = {
 			isa = PBXGroup;
 			children = (
+				53D61B471C8D034600DEDE12 /* EventMonitor.swift */,
+				53D61B4A1C8D0C0800DEDE12 /* PasteBoardUtil.swift */,
 				534E36C21BC9DCED00B70ACC /* AppDelegate.swift */,
+				53D61B4C1C8D1E3E00DEDE12 /* Clock.swift */,
+				53D61B501C8D42D900DEDE12 /* DateTime.swift */,
+				53B686421C8D011F00CCCF30 /* TimeViewController.swift */,
+				53B686431C8D011F00CCCF30 /* TimeViewController.xib */,
 				534E36C41BC9DCED00B70ACC /* Assets.xcassets */,
 				534E36C61BC9DCED00B70ACC /* MainMenu.xib */,
 				534E36C91BC9DCED00B70ACC /* Info.plist */,
@@ -116,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				534E36C51BC9DCED00B70ACC /* Assets.xcassets in Resources */,
+				53B686451C8D011F00CCCF30 /* TimeViewController.xib in Resources */,
 				534E36C81BC9DCED00B70ACC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,7 +146,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D61B481C8D034600DEDE12 /* EventMonitor.swift in Sources */,
 				534E36C31BC9DCED00B70ACC /* AppDelegate.swift in Sources */,
+				53D61B4B1C8D0C0800DEDE12 /* PasteBoardUtil.swift in Sources */,
+				53B686441C8D011F00CCCF30 /* TimeViewController.swift in Sources */,
+				53D61B511C8D42D900DEDE12 /* DateTime.swift in Sources */,
+				53D61B4D1C8D1E3E00DEDE12 /* Clock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +292,7 @@
 				534E36CE1BC9DCED00B70ACC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

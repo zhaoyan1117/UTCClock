@@ -25,7 +25,7 @@ class TimeViewController: NSViewController {
         PasteBoardUtil.copyToClipboard(utcDateTime.getCurrentEpochStr())
     }
     
-    @IBAction func convert(sender: NSBundle) {
+    @IBAction func convertEpochButton(sender: AnyObject) {
         convertInternal()
     }
 

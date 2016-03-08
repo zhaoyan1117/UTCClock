@@ -33,7 +33,7 @@ Epoch</string>
                 </button>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZC-S1-WPh">
                     <rect key="frame" x="20" y="52" width="170" height="24"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="yyyy-MM-dd HH:mm:ss" drawsBackground="YES" usesSingleLineMode="YES" id="bZ6-Q2-Dmu">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="yyyy-MM-dd HH:mm:ss" drawsBackground="YES" usesSingleLineMode="YES" id="bZ6-Q2-Dmu">
                         <font key="font" size="15" name="EurostileRegular"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -41,7 +41,7 @@ Epoch</string>
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDA-4n-G49">
                     <rect key="frame" x="20" y="86" width="170" height="24"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="yyyy-MM-dd HH:mm:ss" drawsBackground="YES" usesSingleLineMode="YES" id="vXt-Lw-2IS">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="yyyy-MM-dd HH:mm:ss" drawsBackground="YES" usesSingleLineMode="YES" id="vXt-Lw-2IS">
                         <font key="font" size="15" name="EurostileRegular"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -80,7 +80,7 @@ Time</string>
                 </button>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0En-F9-apR">
                     <rect key="frame" x="20" y="120" width="210" height="24"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" usesSingleLineMode="YES" id="9vE-Io-QOk">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Epoch Input" drawsBackground="YES" usesSingleLineMode="YES" id="9vE-Io-QOk">
                         <font key="font" size="15" name="EurostileRegular"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

@@ -25,7 +25,7 @@ class TimeViewController: NSViewController {
         PasteBoardUtil.copyToClipboard(utcDateTime.getCurrentEpochStr())
     }
     
-    @IBAction func convertEpochButton(sender: AnyObject) {
+    @IBAction func convertEpochButton(sender: NSButton) {
         convertInternal()
     }
 
@@ -42,8 +42,8 @@ class TimeViewController: NSViewController {
             utcOutput.stringValue = utcDateTime.getCurrentTimeStr(epoch)
             pstOutput.stringValue = pstDateTime.getCurrentTimeStr(epoch)
         } else {
-            utcOutput.stringValue = DateTime.formatterStr
-            pstOutput.stringValue = DateTime.formatterStr
+            utcOutput.stringValue = ""
+            pstOutput.stringValue = ""
         }
     }
 }

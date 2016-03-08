@@ -35,16 +35,16 @@ Epoch</string>
                     <rect key="frame" x="20" y="84" width="170" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="yyyy-MM-dd HH:mm:ss" usesSingleLineMode="YES" bezelStyle="round" id="bZ6-Q2-Dmu">
                         <font key="font" size="15" name="EurostileRegular"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDA-4n-G49">
                     <rect key="frame" x="20" y="52" width="170" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="yyyy-MM-dd HH:mm:ss" usesSingleLineMode="YES" bezelStyle="round" id="vXt-Lw-2IS">
                         <font key="font" size="15" name="EurostileRegular"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z27-lB-yuK">
@@ -65,16 +65,6 @@ Epoch</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOS-dG-uwX">
-                    <rect key="frame" x="18" y="17" width="214" height="29"/>
-                    <buttonCell key="cell" type="bevel" title="Quit UTC Clock" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SuZ-lU-mgN">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="15" name="EurostileRegular"/>
-                        <connections>
-                            <action selector="quitApp:" target="-2" id="TlK-gd-69H"/>
-                        </connections>
-                    </buttonCell>
-                </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oop-SC-sLi">
                     <rect key="frame" x="18" y="177" width="104" height="105"/>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" alignment="center" scrollable="YES" lineBreakMode="clipping" state="on" borderStyle="border" inset="2" id="qNH-Wz-huB">
@@ -92,8 +82,8 @@ Time</string>
                     <rect key="frame" x="20" y="148" width="210" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" usesSingleLineMode="YES" bezelStyle="round" id="9vE-Io-QOk">
                         <font key="font" size="15" name="EurostileRegular"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
                         <action selector="enterEpochInput:" target="-2" id="OBl-RE-eHi"/>
@@ -107,6 +97,16 @@ Time</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gOS-dG-uwX">
+                    <rect key="frame" x="18" y="17" width="214" height="29"/>
+                    <buttonCell key="cell" type="bevel" title="Quit UTC Clock" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SuZ-lU-mgN">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" size="15" name="EurostileRegular"/>
+                        <connections>
+                            <action selector="quitApp:" target="-2" id="TlK-gd-69H"/>
+                        </connections>
+                    </buttonCell>
+                </button>
             </subviews>
             <point key="canvasLocation" x="552" y="450"/>
         </customView>

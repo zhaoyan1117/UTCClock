@@ -9,8 +9,8 @@
 import Cocoa
 
 class TimeViewController: NSViewController {
+    private static let SecStr = "sec";
     private static let MsStr = "ms";
-    private static let UsStr = "us";
 
     @IBOutlet weak var epochInput: NSTextField!
     @IBOutlet weak var utcOutput: NSTextField!
@@ -42,14 +42,14 @@ class TimeViewController: NSViewController {
 
     @IBAction func toggleTimeUnit(sender: NSButton) {
         if (sender.title == TimeViewController.MsStr) {
-            sender.title = TimeViewController.UsStr
-        } else if (sender.title == TimeViewController.UsStr) {
+            sender.title = TimeViewController.SecStr
+        } else if (sender.title == TimeViewController.SecStr) {
             sender.title = TimeViewController.MsStr
         }
     }
     
     private func convertInternal() {
-        if let epoch = getEpochInMs(epochInput.stringValue) {
+        if let epoch = getEpochInSec() {
             utcOutput.stringValue = utcDateTime.getCurrentTimeStr(epoch)
             pstOutput.stringValue = pstDateTime.getCurrentTimeStr(epoch)
         } else {
@@ -58,11 +58,11 @@ class TimeViewController: NSViewController {
         }
     }
     
-    private func getEpochInMs(epochStr: String) -> Double? {
-        if let epoch = Double(epochStr) {
-            if (timeUnitInput.title == TimeViewController.MsStr) {
+    private func getEpochInSec() -> Double? {
+        if let epoch = Double(epochInput.stringValue) {
+            if (timeUnitInput.title == TimeViewController.SecStr) {
                 return epoch
-            } else if (timeUnitInput.title == TimeViewController.UsStr) {
+            } else if (timeUnitInput.title == TimeViewController.MsStr) {
                 return epoch / 1000
             } else {
                 return nil

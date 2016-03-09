@@ -9,10 +9,13 @@
 import Cocoa
 
 class TimeViewController: NSViewController {
-    
+    private static let MsStr = "ms";
+    private static let UsStr = "us";
+
     @IBOutlet weak var epochInput: NSTextField!
     @IBOutlet weak var utcOutput: NSTextField!
     @IBOutlet weak var pstOutput: NSTextField!
+    @IBOutlet weak var timeUnitInput: NSButton!
     
     private let pstDateTime = DateTime(timeZone: "PST")
     private let utcDateTime = DateTime(timeZone: "UTC")
@@ -37,13 +40,35 @@ class TimeViewController: NSViewController {
         NSApplication.sharedApplication().terminate(self)
     }
 
+    @IBAction func toggleTimeUnit(sender: NSButton) {
+        if (sender.title == TimeViewController.MsStr) {
+            sender.title = TimeViewController.UsStr
+        } else if (sender.title == TimeViewController.UsStr) {
+            sender.title = TimeViewController.MsStr
+        }
+    }
+    
     private func convertInternal() {
-        if let epoch = Double(epochInput.stringValue) {
+        if let epoch = getEpochInMs(epochInput.stringValue) {
             utcOutput.stringValue = utcDateTime.getCurrentTimeStr(epoch)
             pstOutput.stringValue = pstDateTime.getCurrentTimeStr(epoch)
         } else {
             utcOutput.stringValue = ""
             pstOutput.stringValue = ""
+        }
+    }
+    
+    private func getEpochInMs(epochStr: String) -> Double? {
+        if let epoch = Double(epochStr) {
+            if (timeUnitInput.title == TimeViewController.MsStr) {
+                return epoch
+            } else if (timeUnitInput.title == TimeViewController.UsStr) {
+                return epoch / 1000
+            } else {
+                return nil
+            }
+        } else {
+            return nil
         }
     }
 }

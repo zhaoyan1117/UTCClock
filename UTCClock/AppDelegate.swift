@@ -20,15 +20,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
-    let popover = NSPopover()
+    private let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
+    private let statusItemImage = NSImage(named: "clock")
+
+    private let popover = NSPopover()
     
-    let utcDateTime = DateTime(timeZone: "UTC")
-    var eventMonitor: EventMonitor?
-    var clock: Clock?
+    private let utcDateTime = DateTime(timeZone: "UTC")
+    private var eventMonitor: EventMonitor?
+    private var clock: Clock?
     
     override func awakeFromNib() {
         if let button = statusItem.button {
+            button.image = statusItemImage
             button.action = Selector("togglePopover:")
             button.font = NSFont(name: "Eurostile", size: 15)
             button.alignment = NSTextAlignment.Center
@@ -49,9 +52,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 button.title = self.utcDateTime.getCurrentTimeStr()
             }
         }
-        clock?.start()
     }
-    
+
+    func getClock() -> Clock {
+        return clock!
+    }
+
+    func getStatusItem() -> NSStatusItem {
+        return statusItem
+    }
+
+    func getStatusItemImage() -> NSImage? {
+        return statusItemImage
+    }
+
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
             popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)

@@ -12,6 +12,9 @@ class TimeViewController: NSViewController {
     private static let SecStr = "sec";
     private static let MsStr = "ms";
 
+    private static let showMenuBarClockStr = "Show UTC Clock On Menubar"
+    private static let hideMenuBarClockStr = "Hide UTC Clock On Menubar"
+
     @IBOutlet weak var epochInput: NSTextField!
     @IBOutlet weak var utcOutput: NSTextField!
     @IBOutlet weak var pstOutput: NSTextField!
@@ -19,6 +22,10 @@ class TimeViewController: NSViewController {
     
     private let pstDateTime = DateTime(timeZone: "PST")
     private let utcDateTime = DateTime(timeZone: "UTC")
+
+    private let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+
+    private var menuBarClockOn = false
 
     @IBAction func copyCurrentUTCTime(sender: NSButton) {
         PasteBoardUtil.copyToClipboard(utcDateTime.getCurrentTimeStr())
@@ -47,7 +54,37 @@ class TimeViewController: NSViewController {
             sender.title = TimeViewController.MsStr
         }
     }
-    
+
+    @IBAction func toggleUTCClockOnMenuBar(sender: NSButton) {
+        if (menuBarClockOn) {
+            hideUTCClockOnMenuBar(sender)
+            menuBarClockOn = false
+        } else {
+            showUTCClockOnMenuBar(sender)
+            menuBarClockOn = true
+        }
+    }
+
+    private func showUTCClockOnMenuBar(toggleBtn: NSButton) {
+        appDelegate.closePopover(nil)
+        appDelegate.getStatusItem().image = nil
+        appDelegate.getStatusItem().length = NSVariableStatusItemLength
+        appDelegate.getStatusItem().title = utcDateTime.getCurrentTimeStr()
+        appDelegate.getClock().start()
+
+        toggleBtn.title = TimeViewController.hideMenuBarClockStr
+    }
+
+    private func hideUTCClockOnMenuBar(toggleBtn: NSButton) {
+        appDelegate.closePopover(nil)
+        appDelegate.getClock().stop()
+        appDelegate.getStatusItem().title = nil
+        appDelegate.getStatusItem().length = NSSquareStatusItemLength
+        appDelegate.getStatusItem().image = appDelegate.getStatusItemImage()
+
+        toggleBtn.title = TimeViewController.showMenuBarClockStr
+    }
+
     private func convertInternal() {
         if let epoch = getEpochInSec() {
             utcOutput.stringValue = utcDateTime.getCurrentTimeStr(epoch)

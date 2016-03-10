@@ -32,7 +32,7 @@ UTC Epoch</string>
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZC-S1-WPh">
-                    <rect key="frame" x="20" y="61" width="170" height="24"/>
+                    <rect key="frame" x="20" y="95" width="170" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="yyyy-MM-dd HH:mm:ss" drawsBackground="YES" usesSingleLineMode="YES" id="bZ6-Q2-Dmu">
                         <font key="font" size="15" name="EurostileRegular"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -40,7 +40,7 @@ UTC Epoch</string>
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDA-4n-G49">
-                    <rect key="frame" x="20" y="95" width="170" height="24"/>
+                    <rect key="frame" x="20" y="61" width="170" height="24"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="yyyy-MM-dd HH:mm:ss" drawsBackground="YES" usesSingleLineMode="YES" id="vXt-Lw-2IS">
                         <font key="font" size="15" name="EurostileRegular"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -86,14 +86,6 @@ UTC Epoch</string>
                         <action selector="enterEpochInput:" target="-2" id="OBl-RE-eHi"/>
                     </connections>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5Q-Br-PWO">
-                    <rect key="frame" x="196" y="64" width="36" height="19"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PST" usesSingleLineMode="YES" id="RJW-be-rcw">
-                        <font key="font" size="15" name="EurostileRegular"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ftz-gY-SxV">
                     <rect key="frame" x="20" y="191" width="210" height="5"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -126,6 +118,14 @@ UTC Epoch</string>
                         </connections>
                     </buttonCell>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5Q-Br-PWO">
+                    <rect key="frame" x="196" y="64" width="36" height="19"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PST" usesSingleLineMode="YES" id="RJW-be-rcw">
+                        <font key="font" size="15" name="EurostileRegular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <point key="canvasLocation" x="225" y="285.5"/>
         </customView>
